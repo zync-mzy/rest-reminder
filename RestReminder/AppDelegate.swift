@@ -46,6 +46,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // 创建菜单
         let menu = NSMenu()
 
+        menu.addItem(NSMenuItem(title: "休息一下", action: #selector(startRestNow), keyEquivalent: "r"))
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "偏好设置...", action: #selector(openSettings), keyEquivalent: ","))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "退出", action: #selector(quit), keyEquivalent: "q"))
@@ -123,6 +125,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc private func handleScreenWake() {
         print("检测到屏幕唤醒，重置计时器")
         timerManager.reset()
+    }
+
+    @objc private func startRestNow() {
+        timerManager.startRest()
     }
 
     @objc private func openSettings() {
