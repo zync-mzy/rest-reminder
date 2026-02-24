@@ -9,7 +9,7 @@ struct RestView: View {
 
             VStack(spacing: 40) {
                 // 休息提示
-                Text("时间到了，休息一下")
+                Text("伏案久了，休息一下")
                     .font(.system(size: 48, weight: .bold))
                     .foregroundColor(.white)
 
